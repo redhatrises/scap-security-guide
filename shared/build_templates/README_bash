@@ -1,0 +1,10 @@
+This file is meant to give a quick overview to some of the
+content located in this directory.
+
+This directory contains BASH remediation scripts for the
+associated OVAL and XCCDF content. It is worth noting that
+the BASH script names must match the the OVAL 'id' and
+XCCDF Rule 'id'; otherwise, the script is not merged in with
+the final xml content for delivery.
+
+This file can be removed if necessary.
