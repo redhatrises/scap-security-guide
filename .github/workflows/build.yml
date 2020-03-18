@@ -23,6 +23,8 @@ jobs:
           cd build && cmake ../ && make clean rhel${{ matrix.rhel-version }}
       - name:
         uses: ansible/ansible-lint-action@master
+        run:
+          pwd && ls -l 
         with: 
           targets:
             ./build/ansible/rhel${{ matrix.rhel-version }}-playbook-C2S.yml
