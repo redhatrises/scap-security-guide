@@ -25,6 +25,6 @@ jobs:
         uses: ansible/ansible-lint-action@master
         with: 
           targets:
-            build/ansible/rhel${{ matrix.rhel-version }}-*.yml
-          args: "-c .ansible-lint"
+            build/ansible/rhel${{ matrix.rhel-version }}-playbook-C2S.yml
+          args: "-c ./.ansible-lint"
             

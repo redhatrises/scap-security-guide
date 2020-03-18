@@ -15,7 +15,7 @@ rules:
   indentation: disable
   key-duplicates: enable
   line-length: disable
-  new-line-at-end-of-file: disable
+  #new-line-at-end-of-file: disable
   new-lines: {type: unix}
-  trailing-spaces: disable
+  #trailing-spaces: disable
   truthy: disable
