@@ -1,0 +1,30 @@
+name: Build
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+        rhel-version: [7, 8]
+
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Make rhel${{ matrix.rhel-version }}
+        run: |
+          sudo apt-get -qq update
+          sudo apt-get -qq install cmake ninja-build libopenscap8 libxml2-utils expat xsltproc python3-jinja2 python3-yaml
+          cd build && cmake ../ && make clean rhel${{ matrix.rhel-version }}
+      - name:
+        uses: ansible/ansible-lint-action@master
+        with: 
+          targets:
+            build/ansible/rhel${{ matrix.rhel-version }}-*.yml
+          args: "-c .ansible-lint"
+            
