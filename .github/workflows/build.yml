@@ -21,8 +21,8 @@ jobs:
           sudo apt-get -qq update
           sudo apt-get -qq install cmake ninja-build libopenscap8 libxml2-utils expat xsltproc python3-jinja2 python3-yaml
           cd build && cmake ../ && make clean rhel${{ matrix.rhel-version }}
+      - uses: ansible/ansible-lint-action@master
       - name:
-        uses: ansible/ansible-lint-action@master
         run:
           pwd && ls -l 
         with: 
