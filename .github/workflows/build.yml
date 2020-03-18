@@ -25,6 +25,7 @@ jobs:
       - name:
         run:
           pwd && ls -l 
+      - name:
         with: 
           targets:
             ./build/ansible/rhel${{ matrix.rhel-version }}-playbook-C2S.yml
