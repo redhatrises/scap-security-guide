@@ -24,6 +24,9 @@ conduct is followed. Should you ever need, please feel free to reach out directl
 
 These maintainers are ultimately held responsible for ensuring that the commits and contributions
 meet the standards, expectations, and if applicable, laws of the public-private partnership.
+It is important to realize that these maintainers a project maintainers but not necessarily
+content maintainers. Anyone with a proven track record of contributions who own and author content
+are considered content maintainers.
 
 Issues
 ---
@@ -79,7 +82,7 @@ There are some guidelines and rules to consider when you are contributing conten
 1. It is always better to fix an issue in external upstream open source projects before contributing, fixing, or breaking content here. For example if the `gdm` rpm reports changed permissions when the `rpm_verify_permissions` rule runs, the fix needs to be provided in the `gdm` rpm not by changing or disabling the content. Another example of this is adding a configuration option like to `pam_faillock` and `pam_pwquality` to make it easy for centralized accounts to ignore local settings which may be governed by the centralized account management tool. Once the patches are merged in the upstream project, you should then open a new pull request in this project with the changes. Following this approach not only ensures that it is easier for others to securely configure their systems, but it makes other upstream projects better and easier to use.
 1. Ask before you disable or remove content because you feel that they are not security relevant. They might actaully be security relevant in ways that you might not realize. This way we all learn something.
 1. Products or content that have been previously retired should stay retired unless there is a heavy commitment to support that content.
-1. While this is an open source project, contributing content from projects that have been taken over by a hacker is a no-go. Not only can you or the project not guarantee that that project is truly cleaned up, but doing so diminishes the trust and provenance of this project.
+1. While this is an open source project, contributing content from projects that have been taken over by a hacker is a no-go. Not only can you or the project not guarantee that that project is truly cleaned up, but doing so diminishes the trust and provenance of this project. A good example of a hacked project is the Webmin project.
 1. Both DISA and NSA have said CentOS does not meet the expectations of U.S. Government security requirements. Therefore, there are no government profiles for CentOS, and they are not supported by this project whether through developement or contributions. This clearly angers some, but good cyber practices and compliance are practiced and expected by this project.
 1. Changes related to one product or profile shouldn’t change behavior for other products or profiles unless the nature of the change affects multiple products or profiles.
 1. If you are able and have time, prevent duplication of code. Use Jinja macros and [check (remediation) templates](/docs/manual/developer_guide.adoc#732-list-of-available-templates).
